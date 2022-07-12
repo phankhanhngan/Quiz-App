@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f1506a83e1.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="btnStart">
+        <button>Start Quiz</button>
+    </div>
+
+    <div class="info_box">
+        <header>Some Rules of this Quiz</header>
+        <ul>
+            <li>1. You will have only <span>15 seconds</span> per each question.</li>
+            <li>2. Once you select your answer, it can't be undone.</li>
+            <li>3. You can't select any option once time goes off.</li>
+            <li>4. You can't exit from the Quiz while you're playing.</li>
+            <li>5. You'll get points on the basis of your correct answers.</li>
+        </ul>
+        <div class="footer">
+            <button class="btnExit">Exit Quiz</button>
+            <button class="btnContinue">Continue</button>
+        </div>
+    </div>
+
+    <div class="quiz_box">
+        <div class="head">
+            <header>Awesome Quiz Application</header>
+            <div class="timer">
+                Time Left
+                <span>12</span>
+                <div class="time_line"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="question">
+                <span class="question_no">1.</span>  <span class="question_content"> What does HTML stand for?</span>
+            </div>
+            <div class="option">
+                <span>Hyper Text Proccessor</span>
+            </div>
+            <div class="option">
+                <span>Hyper Text Markup Language</span>
+            </div>
+            <div class="option">
+                <span>Hyper Text Multiple Language</span>
+            </div>
+            <div class="option">
+                <span>Hyper Text Multi Language</span>
+            </div>
+        </div>
+        <hr>
+        <div class="foot">
+            <div class="total_question">
+                <span class="current_question">1</span>
+                <span>of</span>
+                <span class="total_question_count">5</span>
+                <span>Questions</span>
+            </div>
+            <button class="btnNext">Next Ques</button>
+        </div>
+    </div>
+        
+</body>
+</html>
