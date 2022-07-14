@@ -12,8 +12,8 @@ body{
   overflow: hidden;
   background: linear-gradient(135deg, #86E3CE , #D0E6A5);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 ::selection {
@@ -21,7 +21,7 @@ body{
   background: #626262;
 }
 
-.btnStart button, .info_box, .quiz_box, .result_box {
+.btnStart, .info_box, .quiz_box, .result_box {
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),
               0 6px 20px 0 rgba(0,0,0,0.19);
@@ -31,7 +31,7 @@ body{
     position: absolute;
 }
 
-.btnStart button{
+.btnStart {
     font-size: 25px;
     font-weight: 500;
     color: #84d1bf;
@@ -40,9 +40,10 @@ body{
     border: none;
     background: #fff;
     cursor: pointer;
+    margin-left: 107px;
 }
 
-.btnStart button:hover {
+.btnStart:hover {
   background: #84d1bf;
   color: #fff;
 }
@@ -54,6 +55,17 @@ body{
   padding: 24px 24px;
   pointer-events: none;
   opacity: 0;
+  transform: translate(-1%,-1%) scale(0.5);
+  transition: all 0.3s ease;
+}
+
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult {
+  z-index: 2;
+  pointer-events: auto;
+  opacity: 1;
+  transform: translate(0%,0%) scale(1);
 }
 
 .info_box ul {
@@ -128,6 +140,7 @@ body{
   position: absolute;
   pointer-events: none;
   opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .quiz_box .head {
@@ -206,6 +219,18 @@ body{
   background: #b7e3be;
 }
 
+.quiz_box .body .option.correct {
+  background: #93e9a1;
+}
+
+.quiz_box .body .option.incorrect {
+  background: #ee8181;
+}
+
+.quiz_box .body .option.disable {
+  pointer-events: none;
+}
+
 .quiz_box .body .option .icon {
   width: 25px;
   height: 25px;
@@ -240,17 +265,31 @@ body{
   color: #fff;
   background: #84d1bf;
   border: 1px solid;
-  font-size: 14px;
   border-radius: 8px;
+  font-size: 14px;
 }
 
 .quiz_box .foot button:hover {
   background: #4e8175;
 }
 
-.quiz_box .foot .current_question,
-.quiz_box .foot .total_question_count {
+.quiz_box .foot button.activeBtnNext {
+  opacity: 1;
+  pointer-events: default;
+}
+
+.quiz_box .foot button.unactiveBtnNext {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.quiz_box .foot .total_question span{
+  display: flex;
+}
+
+.quiz_box .foot .total_question p {
   font-weight: 600;
+  padding: 0 6px;
 }
 
 .result_box {
@@ -261,6 +300,7 @@ body{
   text-align: center;
   pointer-events: none;
   opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .result_box i {
